@@ -20,13 +20,19 @@
 
   <body ng-controller="BacklogCtrl">
     <h1>{{title}}</h1>
-    <h2>Product backlog</h2>
-    <ul ng-sortable="{animation:150}" class="list-group">
-      <li ng-repeat="backlogitem in backlog" class="list-group-item">
-        {{backlogitem.description}}
-         <span class="badge">{{backlogitem.value}}</span>
-         <span class="badge">{{backlogitem.estimate}}</span>
-      </li>
-    </ul>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Product backlog</h3>
+      </div>
+      <div class="panel-body">
+        <ul ng-sortable="{animation:150}" class="list-group">
+          <li ng-repeat="backlogitem in backlog" class="list-group-item">
+            {{backlogitem.description}}
+            <span class="badge">{{backlogitem.value}}</span>
+            <span class="badge">{{backlogitem.estimate}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
