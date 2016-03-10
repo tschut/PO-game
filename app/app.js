@@ -1,7 +1,8 @@
 var poGame = angular.module('poGame', [
   'ngRoute',
   'poGameControllers',
-  'ng-sortable'
+  'ng-sortable',
+  'rzModule'
   ]);
 
 poGame.config(['$routeProvider',
