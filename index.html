@@ -24,6 +24,8 @@
     <ul ng-sortable="{animation:150}" class="list-group">
       <li ng-repeat="backlogitem in backlog" class="list-group-item">
         {{backlogitem.description}}
+         <span class="badge">{{backlogitem.value}}</span>
+         <span class="badge">{{backlogitem.estimate}}</span>
       </li>
     </ul>
   </body>
