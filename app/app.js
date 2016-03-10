@@ -55,8 +55,8 @@ angular.module('poGame').factory('game', function() {
 poGame.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-    when('/product-backlog', {
-      templateUrl: 'partials/product-backlog.html',
+    when('/initial-product-backlog', {
+      templateUrl: 'partials/initial-product-backlog.html',
       controller: 'BacklogCtrl'
     }).
     when('/sprint-parameters', {
@@ -68,6 +68,6 @@ poGame.config(['$routeProvider',
       controller: 'SprintReviewCtrl'
     }).
     otherwise({
-      redirectTo: '/product-backlog'
+      redirectTo: '/initial-product-backlog'
     });
   }]);
