@@ -12,27 +12,11 @@
 <div class="bs-callout bs-callout-primary">
   <h4>Done?</h4>
   Happy with the Product Backlog?
-  <a href="#/sprint-parameters" type="button" class="btn btn-primary pull-right">Continue!</a>
+  <button type="button" class="btn btn-primary pull-right">Continue!</button>
 </div>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Product backlog</h3>
+    <h3 class="panel-title">Sprint parameters</h3>
   </div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>Business value</th>
-        <th>Estimate</th>
-      </tr>
-    </thead>
-    <tbody ng-sortable="{animation:150}" class="table-hover">
-      <tr ng-repeat="item in backlog">
-        <td>{{item.description}}</td>
-        <td>{{item.value}}</td>
-        <td>{{item.estimate}}</td>
-      </tr>
-    </tbody>
-  </table>
 </div>

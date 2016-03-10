@@ -9,3 +9,7 @@ var BACKLOG = [
 poGameControllers.controller('BacklogCtrl', function ($scope) {
 	$scope.backlog = BACKLOG;
 });
+
+poGameControllers.controller('SprintParamCtrl', function ($scope) {
+	
+});
