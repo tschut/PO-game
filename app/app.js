@@ -16,6 +16,10 @@ poGame.config(['$routeProvider',
       templateUrl: 'partials/sprint-parameters.html',
       controller: 'SprintParamCtrl'
     }).
+    when('/sprint-review', {
+      templateUrl: 'partials/sprint-review.html',
+      controller: 'SprintReviewCtrl'
+    }).
     otherwise({
       redirectTo: '/product-backlog'
     });

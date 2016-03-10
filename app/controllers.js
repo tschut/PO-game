@@ -13,3 +13,7 @@ poGameControllers.controller('BacklogCtrl', function ($scope) {
 poGameControllers.controller('SprintParamCtrl', function ($scope) {
 	$scope.sprint = {duration: "2"}
 });
+
+poGameControllers.controller('SprintReviewCtrl', function ($scope) {
+	
+});
