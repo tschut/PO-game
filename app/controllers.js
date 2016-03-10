@@ -4,10 +4,14 @@ poGameControllers.controller('BacklogCtrl', function ($scope, game) {
 	$scope.backlog = game.backlog;
 });
 
-poGameControllers.controller('SprintParamCtrl', function ($scope) {
-	$scope.sprint = {duration: "2"}
+poGameControllers.controller('SprintParamCtrl', function ($scope, game) {
+	$scope.sprintparams = game.sprintparams;
+
+	$scope.startSprint = function() {
+		game.runSprint();
+	}
 });
 
-poGameControllers.controller('SprintReviewCtrl', function ($scope) {
-	
+poGameControllers.controller('SprintReviewCtrl', function ($scope, game) {
+	$scope.sprintresults = game.sprintresults;
 });

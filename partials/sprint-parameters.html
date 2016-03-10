@@ -13,7 +13,7 @@
     Sprint duration (weeks)
     </td>
     <td>
-      <select class="form-control" ng-model="sprint.duration">
+      <select class="form-control" ng-model="sprintparams.duration">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -25,6 +25,6 @@
   </table>
 
   <div class="panel-body">
-    <a href="#/sprint-review" type="button" class="btn btn-primary pull-right">Start the Sprint!</a>
+    <a href="#/sprint-review" type="button" class="btn btn-primary pull-right" ng-click="startSprint()">Start the Sprint!</a>
   </div>
 </div>
