@@ -1,0 +1,30 @@
+<html ng-app="poGame">
+  <head>
+    <title>PO Simulation Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--<link rel="stylesheet" href="styles.css">-->
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="node_modules/angular/angular.js"></script>
+
+    <script src="app/controllers.js"></script>
+
+    <script src="node_modules/sortablejs/Sortable.js"></script>
+    <script src="node_modules/sortablejs/ng-sortable.js"></script>
+
+    
+  </head>
+
+  <body ng-controller="BacklogCtrl">
+    <h1>{{title}}</h1>
+    <h2>Product backlog</h2>
+    <ul ng-sortable="{animation:150}" class="list-group">
+      <li ng-repeat="backlogitem in backlog" class="list-group-item">
+        {{backlogitem.description}}
+      </li>
+    </ul>
+  </body>
+</html>
