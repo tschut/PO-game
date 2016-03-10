@@ -1,12 +1,14 @@
-<html ng-app="poGame">
-  <head>
-    <title>PO Simulation Game</title>
+<!DOCTYPE html>
+<html ng-app="poGame" lang="en">
+  <head>    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!--<link rel="stylesheet" href="styles.css">-->
 
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <title>PO Simulation Game</title>
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 
     <script src="node_modules/angular/angular.js"></script>
 
@@ -19,20 +21,32 @@
   </head>
 
   <body ng-controller="BacklogCtrl">
-    <h1>{{title}}</h1>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Product backlog</h3>
-      </div>
-      <div class="panel-body">
-        <ul ng-sortable="{animation:150}" class="list-group">
-          <li ng-repeat="backlogitem in backlog" class="list-group-item">
-            {{backlogitem.description}}
-            <span class="badge">{{backlogitem.value}}</span>
-            <span class="badge">{{backlogitem.estimate}}</span>
-          </li>
-        </ul>
+    <div class="container">
+      <h1>{{title}}</h1>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Product backlog</h3>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Business value</th>
+              <th>Estimate</th>
+            </tr>
+          </thead>
+          <tbody ng-sortable="{animation:150}" class="table-hover">
+            <tr ng-repeat="item in backlog">
+              <td>{{item.description}}</td>
+              <td>{{item.value}}</td>
+              <td>{{item.estimate}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
   </body>
 </html>
