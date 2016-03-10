@@ -1,4 +1,4 @@
-var poGame = angular.module('poGame', ['ng-sortable']);
+var poGameControllers = angular.module('poGameControllers', []);
 
 var BACKLOG = [
 	{"id": 1, "description": "1-click checkout", "value": 1, "estimate": 3},
@@ -6,6 +6,6 @@ var BACKLOG = [
 	{"id": 3, "description": "password reset", "value": 5, "estimate": 8}
 ];
 
-poGame.controller('BacklogCtrl', function ($scope) {
+poGameControllers.controller('BacklogCtrl', function ($scope) {
 	$scope.backlog = BACKLOG;
 });
