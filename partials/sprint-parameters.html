@@ -3,17 +3,28 @@
   Explanation here.
 </div>
 
-<div class="bs-callout bs-callout-primary">
-  <h4>Done?</h4>
-  Happy with the Sprint parameters?
-  <button type="button" class="btn btn-primary pull-right">Start the Sprint!</button>
-</div>
-
+  
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Sprint parameters</h3>
   </div>
-  <div>
-    <rzslider rz-slider-model="sprint.duration" rz-slider-options="{floor: 1, ceil: 4}"></rzslider>
-</div>
+  <table class="table">
+    <tr><td>
+    Sprint duration (weeks)
+    </td>
+    <td>
+      <select class="form-control" ng-model="sprint.duration">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
+    </td></tr>
+  </table>
+
+  <div class="panel-body">
+    <button type="button" class="btn btn-primary pull-right">Start the Sprint!</button>
+  </div>
 </div>
