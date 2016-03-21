@@ -8,5 +8,14 @@ var BACKLOG = [
 ];
 
 function Game() {
-	this.backlog = BACKLOG;
+  this.backlog = BACKLOG;
+
+  this.state = {};
+
+  this.state.weeksleft = 26;
+
+  this.sprintresults = {};
+
+  this.sprintparams = {'duration': '2'}
+  this.velocity = 10; // storypoints/week
 }

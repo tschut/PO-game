@@ -9,14 +9,6 @@ var poGame = angular.module('poGame', [
 
 angular.module('poGame').factory('game', function() {
   var game = new Game();
-  game.state = {};
-
-  game.state.weeksleft = 26;
-
-  game.sprintresults = {};
-
-  game.sprintparams = {'duration': '2'}
-  game.velocity = 10; // storypoints/week
 
   game.runSprint = function() {
     storypointsCompleted = game.sprintparams.duration * game.velocity;
