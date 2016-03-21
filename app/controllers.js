@@ -1,5 +1,9 @@
 var poGameControllers = angular.module('poGameControllers', []);
 
+poGameControllers.controller('OverviewCtrl', function ($scope, game) {
+	
+});
+
 poGameControllers.controller('BacklogCtrl', function ($scope, game) {
 	$scope.backlog = game.backlog;
 });

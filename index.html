@@ -13,6 +13,7 @@
     <link href="node_modules/angularjs-slider/dist/rzslider.css" rel="stylesheet"/>
     
     <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="node_modules/angularjs-slider/dist/rzslider.min.js"></script>
 
@@ -25,7 +26,11 @@
 
   <body>
     <div class="container">
-      <div ng-view></div>
+      <div class="row">
+        <div class="col-md-3" ng-controller="OverviewCtrl"></div>
+
+        <div class="col-md-9" ui-view></div>
+      </div>
     </div>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
