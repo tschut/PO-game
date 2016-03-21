@@ -1,3 +1,5 @@
+
+
 var poGame = angular.module('poGame', [
   'ui.router',
   'poGameControllers',
@@ -15,7 +17,7 @@ var BACKLOG = [
 ];
 
 angular.module('poGame').factory('game', function() {
-  var game = {};
+  var game = new Game();
   game.state = {};
 
   game.state.weeksleft = 26;
