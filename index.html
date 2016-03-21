@@ -27,8 +27,17 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-3" ng-controller="OverviewCtrl"></div>
-
+        <div class="col-md-3" ng-controller="OverviewCtrl">
+          <span>&nbsp;</span>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Product state</h3>
+            </div>
+            <div class="panel-body">
+              Weeks left: {{weeksleft}}
+            </div>
+          </div>
+        </div>
         <div class="col-md-9" ui-view></div>
       </div>
     </div>

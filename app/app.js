@@ -16,6 +16,9 @@ var BACKLOG = [
 
 angular.module('poGame').factory('game', function() {
   var game = {};
+  game.state = {};
+
+  game.state.weeksleft = 26;
 
   game.backlog = BACKLOG;
   game.sprintresults = {};
@@ -85,28 +88,3 @@ poGame.config(function($stateProvider, $urlRouterProvider) {
       controller: 'BacklogCtrl'
     });
 });
-
-/**
-poGame.config(['$routeProvider',
-  function($routeProvider) {
-    $routeProvider.
-    when('/initial-product-backlog', {
-      templateUrl: 'partials/initial-product-backlog.html',
-      controller: 'BacklogCtrl'
-    }).
-    when('/sprint-parameters', {
-      templateUrl: 'partials/sprint-parameters.html',
-      controller: 'SprintParamCtrl'
-    }).
-    when('/sprint-review', {
-      templateUrl: 'partials/sprint-review.html',
-      controller: 'SprintReviewCtrl'
-    }).
-    when('/sprint-planning', {
-      templateUrl: 'partials/sprint-planning.html',
-      controller: 'BacklogCtrl'
-    }).
-    otherwise({
-      redirectTo: '/initial-product-backlog'
-    });
-  }]); */

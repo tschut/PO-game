@@ -1,7 +1,7 @@
 var poGameControllers = angular.module('poGameControllers', []);
 
 poGameControllers.controller('OverviewCtrl', function ($scope, game) {
-	
+	$scope.weeksleft = game.state.weeksleft;
 });
 
 poGameControllers.controller('BacklogCtrl', function ($scope, game) {
