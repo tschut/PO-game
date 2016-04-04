@@ -63,6 +63,8 @@ function Game() {
 
     this.sprintresults = new SprintResults(completedStories);
 
+    this.state.weeksleft -= this.sprintparams.duration;
+
     console.log('backlog', this.backlog.getStories())
     console.log('completed', this.sprintresults.stories)
   }
