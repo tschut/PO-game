@@ -13,7 +13,30 @@ function GameState() {
 }
 
 function Backlog() {
-  this.stories = BACKLOG;
+  var stories = BACKLOG;
+
+  this.getStories = function() {
+    return stories;
+  }
+
+  this.completeStoryPoints = function(points) {
+    completedStories = [];
+    spcount = 0;
+    for (i = 0; i < stories.length; ++i) {
+      spcount += stories[i].estimate;
+      if (spcount > storypointsCompleted) {
+        break;
+      };
+
+      newStory = jQuery.extend(true, {}, stories[i]);
+      completedStories.push(newStory);
+    }
+
+    completedStories.forEach(function (story) {
+      stories = stories.filter(function(backlog_story) {return backlog_story.id != story.id});
+    });
+    return completedStories;
+  }
 }
 
 function Game() {
@@ -26,35 +49,21 @@ function Game() {
 
   this.runSprint = function() {
     storypointsCompleted = this.sprintparams.duration * this.state.velocity;
-    completedStories = [];
-
-    spcount = 0;
-    completedIndexes = [];
-    for (i = 0; i < this.backlog.stories.length; ++i) {
-      spcount += this.backlog.stories[i].estimate;
-      if (spcount > storypointsCompleted) {
-        break;
-      };
-
-      newStory = jQuery.extend(true, {}, this.backlog.stories[i]);
-      console.log(newStory);
-      completedStories.push(newStory);
-    }
+    
+    completedStories = this.backlog.completeStoryPoints(storypointsCompleted);
 
     storypointsCompleted = 0;
     valueDelivered = 0;
     completedStories.forEach(function (story) {
       storypointsCompleted += story.estimate;
       valueDelivered += story.value;
-
-      console.log('filter', this.backlog.stories.filter(function(backlog_story) {return backlog_story.id != story.id}));
-      this.backlog.stories = this.backlog.stories.filter(function(backlog_story) {return backlog_story.id != story.id});
-    }, this);
+    });
+    
     this.sprintresults.storypoints = storypointsCompleted;
     this.sprintresults.valueDelivered = valueDelivered;
     this.sprintresults.completedStories = completedStories;
 
-    console.log('backlog', this.backlog.stories)
+    console.log('backlog', this.backlog.getStories())
     console.log('completed', this.sprintresults.completedStories)
   }
 }

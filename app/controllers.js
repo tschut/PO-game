@@ -5,7 +5,7 @@ poGameControllers.controller('OverviewCtrl', function ($scope, game) {
 });
 
 poGameControllers.controller('BacklogCtrl', function ($scope, game) {
-	$scope.backlog = game.backlog.stories;
+	$scope.backlog = game.backlog.getStories();
 });
 
 poGameControllers.controller('SprintParamCtrl', function ($scope, game) {
