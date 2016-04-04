@@ -9,8 +9,8 @@
     <h3 class="panel-title">Summary</h3>
   </div>
   <div class="panel-body">
-    <p>Delivered value: {{sprintresults.valueDelivered}}</p>
-    <p>Completed storypoints: {{sprintresults.storypoints}}</p>
+    <p>Delivered value: {{sprintresults.val}}</p>
+    <p>Completed storypoints: {{sprintresults.sp}}</p>
   </div>
 
   <div class="panel-heading">
@@ -25,7 +25,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="item in sprintresults.completedStories">
+      <tr ng-repeat="item in sprintresults.stories">
         <td>{{item.description}}</td>
         <td>{{item.value}}</td>
         <td>{{item.estimate}}</td>

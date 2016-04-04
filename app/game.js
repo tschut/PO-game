@@ -39,11 +39,20 @@ function Backlog() {
   }
 }
 
+function SprintResults(stories) {
+  this.sp = 0;
+  this.val = 0;
+  this.stories = stories;
+
+  stories.forEach(function (story) {
+    this.sp += story.estimate;
+    this.val += story.value;
+  });
+}
+
 function Game() {
   this.backlog = new Backlog();
   this.state = new GameState();
-
-  this.sprintresults = {};
 
   this.sprintparams = {'duration': '2'}
 
@@ -52,18 +61,9 @@ function Game() {
     
     completedStories = this.backlog.completeStoryPoints(storypointsCompleted);
 
-    storypointsCompleted = 0;
-    valueDelivered = 0;
-    completedStories.forEach(function (story) {
-      storypointsCompleted += story.estimate;
-      valueDelivered += story.value;
-    });
-    
-    this.sprintresults.storypoints = storypointsCompleted;
-    this.sprintresults.valueDelivered = valueDelivered;
-    this.sprintresults.completedStories = completedStories;
+    this.sprintresults = new SprintResults(completedStories);
 
     console.log('backlog', this.backlog.getStories())
-    console.log('completed', this.sprintresults.completedStories)
+    console.log('completed', this.sprintresults.stories)
   }
 }
