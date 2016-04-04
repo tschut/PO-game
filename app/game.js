@@ -10,12 +10,14 @@ var BACKLOG = [
 function GameState() {
   this.weeksleft = 26;
   this.velocity = 10; // storypoints / week
+}
 
+function Backlog() {
+  this.stories = BACKLOG;
 }
 
 function Game() {
-  this.backlog = BACKLOG;
-
+  this.backlog = new Backlog();
   this.state = new GameState();
 
   this.sprintresults = {};
@@ -28,13 +30,13 @@ function Game() {
 
     spcount = 0;
     completedIndexes = [];
-    for (i = 0; i < this.backlog.length; ++i) {
-      spcount += this.backlog[i].estimate;
+    for (i = 0; i < this.backlog.stories.length; ++i) {
+      spcount += this.backlog.stories[i].estimate;
       if (spcount > storypointsCompleted) {
         break;
       };
 
-      newStory = jQuery.extend(true, {}, this.backlog[i]);
+      newStory = jQuery.extend(true, {}, this.backlog.stories[i]);
       console.log(newStory);
       completedStories.push(newStory);
     }
@@ -45,14 +47,14 @@ function Game() {
       storypointsCompleted += story.estimate;
       valueDelivered += story.value;
 
-      console.log('filter', this.backlog.filter(function(backlog_story) {return backlog_story.id != story.id}));
-      this.backlog = this.backlog.filter(function(backlog_story) {return backlog_story.id != story.id});
-    });
+      console.log('filter', this.backlog.stories.filter(function(backlog_story) {return backlog_story.id != story.id}));
+      this.backlog.stories = this.backlog.stories.filter(function(backlog_story) {return backlog_story.id != story.id});
+    }, this);
     this.sprintresults.storypoints = storypointsCompleted;
     this.sprintresults.valueDelivered = valueDelivered;
     this.sprintresults.completedStories = completedStories;
 
-    console.log('backlog', this.backlog)
+    console.log('backlog', this.backlog.stories)
     console.log('completed', this.sprintresults.completedStories)
   }
 }
