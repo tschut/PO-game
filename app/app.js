@@ -3,8 +3,7 @@
 var poGame = angular.module('poGame', [
   'ui.router',
   'poGameControllers',
-  'ng-sortable',
-  'rzModule'
+  'ng-sortable'
   ]);
 
 angular.module('poGame').factory('game', function() {
