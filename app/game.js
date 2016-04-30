@@ -40,14 +40,10 @@ function Backlog() {
 }
 
 function SprintResults(stories) {
-  this.sp = 0;
-  this.val = 0;
   this.stories = stories;
 
-  stories.forEach(function (story) {
-    this.sp += story.estimate;
-    this.val += story.value;
-  });
+  this.sp = stories.reduce( (a, b) => a + b.estimate, 0);
+  this.val = stories.reduce( (a, b) => a + b.value, 0);
 }
 
 function Game() {
