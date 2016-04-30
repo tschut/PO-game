@@ -9,6 +9,7 @@ var BACKLOG = [
 
 function GameState() {
   this.weeksleft = 26;
+  this.revenue = 0;
   this.velocity = 10; // storypoints / week
 }
 
@@ -60,6 +61,7 @@ function Game() {
     this.sprintresults = new SprintResults(completedStories);
 
     this.state.weeksleft -= this.sprintparams.duration;
+    this.state.revenue += (this.state.revenue * this.sprintparams.duration) + this.sprintresults.val;
 
     console.log('backlog', this.backlog.getStories())
     console.log('completed', this.sprintresults.stories)
