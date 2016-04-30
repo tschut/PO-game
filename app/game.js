@@ -61,9 +61,8 @@ function Game() {
     this.sprintresults = new SprintResults(completedStories);
 
     this.state.weeksleft -= this.sprintparams.duration;
-    this.state.revenue += (this.state.revenue * this.sprintparams.duration) + this.sprintresults.val;
-
-    console.log('backlog', this.backlog.getStories())
-    console.log('completed', this.sprintresults.stories)
+    this.state.revenue_old = this.state.revenue;
+    this.state.revenue_lastsprint = this.state.revenue * this.sprintparams.duration;
+    this.state.revenue = this.state.revenue_lastsprint + this.sprintresults.val;
   }
 }

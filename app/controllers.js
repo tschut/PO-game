@@ -17,5 +17,6 @@ poGameControllers.controller('SprintParamCtrl', function ($scope, game) {
 });
 
 poGameControllers.controller('SprintReviewCtrl', function ($scope, game) {
+	$scope.state = game.state;
 	$scope.sprintresults = game.sprintresults;
 });
